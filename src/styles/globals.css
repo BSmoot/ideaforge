@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-forge-50: #fef5ee;
+  --color-forge-100: #fde8d7;
+  --color-forge-200: #fbcdae;
+  --color-forge-300: #f8aa7a;
+  --color-forge-400: #f57c44;
+  --color-forge-500: #f2591f;
+  --color-forge-600: #e33f15;
+  --color-forge-700: #bc2e13;
+  --color-forge-800: #962818;
+  --color-forge-900: #7a2416;
+  --color-forge-950: #421009;
+
+  --color-steel-50: #f6f7f9;
+  --color-steel-100: #eceef2;
+  --color-steel-200: #d5dae2;
+  --color-steel-300: #b0bac9;
+  --color-steel-400: #8595ab;
+  --color-steel-500: #667892;
+  --color-steel-600: #516079;
+  --color-steel-700: #424e62;
+  --color-steel-800: #3a4253;
+  --color-steel-900: #343a47;
+  --color-steel-950: #23272f;
+
+  --color-ember-50: #fef4ee;
+  --color-ember-100: #fde6d7;
+  --color-ember-200: #fac9ae;
+  --color-ember-300: #f7a47a;
+  --color-ember-400: #f37344;
+  --color-ember-500: #f0501f;
+  --color-ember-600: #e13615;
+  --color-ember-700: #ba2713;
+  --color-ember-800: #942218;
+  --color-ember-900: #781f16;
+  --color-ember-950: #410d09;
+
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #23272f;
+  color: #eceef2;
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+code,
+pre {
+  font-family: var(--font-family-mono);
+}
