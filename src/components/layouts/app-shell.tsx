@@ -51,7 +51,7 @@ export function AppShell(): React.ReactElement {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r border-steel-800 bg-steel-900 transition-transform duration-200 md:relative md:translate-x-0',
+          'fixed inset-y-0 left-0 z-40 flex w-64 shrink-0 flex-col border-r border-steel-800 bg-steel-900 transition-transform duration-200 md:static md:translate-x-0',
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
@@ -87,7 +87,7 @@ export function AppShell(): React.ReactElement {
       </aside>
 
       {/* Main content */}
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         {/* Header */}
         <header className="flex h-16 items-center justify-between border-b border-steel-800 bg-steel-900/50 px-4">
           <button

@@ -117,7 +117,7 @@ export function IdeaCanvas(): React.ReactElement {
 
         {/* Title + Editor */}
         <div className="flex-1 overflow-auto p-6">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-5xl">
             <TitleEditor ideaId={idea.id} initialTitle={idea.title} />
             <div className="mt-4">
               <MarkdownEditor editor={editor} />

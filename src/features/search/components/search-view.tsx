@@ -38,7 +38,7 @@ export function SearchView(): React.ReactElement {
   };
 
   return (
-    <div className="mx-auto max-w-2xl p-6">
+    <div className="mx-auto max-w-5xl p-6">
       <SearchInput
         ref={inputRef}
         value={query}

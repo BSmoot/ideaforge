@@ -51,7 +51,7 @@ export function SparkCaptureModal({
   };
 
   return (
-    <Modal open={open} onOpenChange={onOpenChange} size="md">
+    <Modal open={open} onOpenChange={onOpenChange} size="lg">
       <div onKeyDown={handleKeyDown}>
         <ModalHeader onClose={() => { onOpenChange(false); }}>
           Capture a Spark

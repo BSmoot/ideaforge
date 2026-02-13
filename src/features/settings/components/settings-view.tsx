@@ -13,7 +13,7 @@ export function SettingsView(): React.ReactElement {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="mx-auto max-w-2xl p-6">
+    <div className="mx-auto max-w-4xl p-6">
       <h1 className="mb-8 text-2xl font-bold text-steel-100">Settings</h1>
 
       <div className="space-y-10">

@@ -1,33 +1,20 @@
 import { type ReactNode } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
-const modalContentVariants = cva(
-  'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-lg border border-steel-700 bg-steel-900 shadow-xl focus:outline-none',
-  {
-    variants: {
-      size: {
-        sm: 'w-full max-w-sm p-4',
-        md: 'w-full max-w-md p-6',
-        lg: 'w-full max-w-lg p-6',
-        full: 'h-[90vh] w-[90vw] p-6',
-      },
-    },
-    defaultVariants: {
-      size: 'md',
-    },
-  }
-);
-
-export type ModalSizeVariants = VariantProps<typeof modalContentVariants>;
+const SIZE_CLASSES: Record<string, string> = {
+  sm: 'max-w-sm p-4',
+  md: 'max-w-md p-6',
+  lg: 'max-w-lg p-6',
+  full: 'max-w-[90vw] max-h-[90vh] p-6',
+};
 
 interface ModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   children: ReactNode;
-  size?: ModalSizeVariants['size'];
+  size?: 'sm' | 'md' | 'lg' | 'full';
   className?: string;
 }
 
@@ -35,7 +22,7 @@ export function Modal({
   open,
   onOpenChange,
   children,
-  size,
+  size = 'md',
   className,
 }: ModalProps): React.ReactElement {
   return (
@@ -43,9 +30,19 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" />
         <Dialog.Content
-          className={cn(modalContentVariants({ size }), className)}
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ pointerEvents: 'none' }}
         >
-          {children}
+          <div
+            className={cn(
+              'w-[92vw] rounded-lg border border-steel-700 bg-steel-900 shadow-xl focus:outline-none',
+              SIZE_CLASSES[size],
+              className
+            )}
+            style={{ pointerEvents: 'auto' }}
+          >
+            {children}
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

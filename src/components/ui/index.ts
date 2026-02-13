@@ -4,5 +4,5 @@ export { Input, type InputProps, type InputVariants } from './input';
 export { Textarea, type TextareaProps, type TextareaVariants } from './textarea';
 export { Badge, type BadgeProps, type BadgeVariants } from './badge';
 export { Toast, type ToastVariants } from './toast';
-export { Modal, ModalHeader, ModalBody, ModalFooter, type ModalSizeVariants } from './modal';
+export { Modal, ModalHeader, ModalBody, ModalFooter } from './modal';
 export { ConfirmDialog } from './confirm-dialog';
