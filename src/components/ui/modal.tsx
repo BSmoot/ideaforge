@@ -35,7 +35,7 @@ export function Modal({
         >
           <div
             className={cn(
-              'w-[92vw] rounded-lg border border-steel-700 bg-steel-900 shadow-xl focus:outline-none',
+              'w-[92vw] rounded-lg border border-border bg-surface shadow-xl focus:outline-none',
               SIZE_CLASSES[size],
               className
             )}
@@ -62,14 +62,14 @@ export function ModalHeader({
 }: ModalHeaderProps): React.ReactElement {
   return (
     <div className={cn('mb-4 flex items-center justify-between', className)}>
-      <Dialog.Title className="text-lg font-semibold text-steel-100">
+      <Dialog.Title className="text-lg font-semibold text-foreground">
         {children}
       </Dialog.Title>
       {onClose && (
         <Dialog.Close asChild>
           <button
             onClick={onClose}
-            className="rounded-lg p-1 text-steel-400 hover:bg-steel-800 hover:text-steel-200"
+            className="rounded-lg p-1 text-foreground-secondary hover:bg-surface-hover hover:text-foreground"
             type="button"
             aria-label="Close"
           >
@@ -88,7 +88,7 @@ export function ModalBody({
   children: ReactNode;
   className?: string;
 }): React.ReactElement {
-  return <div className={cn('text-steel-300', className)}>{children}</div>;
+  return <div className={cn('text-foreground-secondary', className)}>{children}</div>;
 }
 
 export function ModalFooter({

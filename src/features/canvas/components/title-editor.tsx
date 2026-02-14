@@ -47,7 +47,7 @@ export function TitleEditor({
       onChange={(e) => { setTitle(e.target.value.slice(0, MAX_TITLE_LENGTH)); }}
       onBlur={handleBlur}
       onKeyDown={handleKeyDown}
-      className="w-full bg-transparent text-2xl font-bold text-steel-100 placeholder:text-steel-600 focus:outline-none"
+      className="w-full bg-transparent text-2xl font-bold text-foreground placeholder:text-foreground-tertiary focus:outline-none"
       placeholder="Untitled idea"
     />
   );

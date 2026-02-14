@@ -38,7 +38,7 @@ export function AppShell(): React.ReactElement {
   useKeyboardShortcuts(shortcuts);
 
   return (
-    <div className="flex h-screen bg-steel-950 text-steel-100">
+    <div className="flex h-screen bg-background text-foreground">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
@@ -51,16 +51,16 @@ export function AppShell(): React.ReactElement {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-40 flex w-64 shrink-0 flex-col border-r border-steel-800 bg-steel-900 transition-transform duration-200 md:static md:translate-x-0',
+          'fixed inset-y-0 left-0 z-40 flex w-64 shrink-0 flex-col border-r border-border bg-surface transition-transform duration-200 md:static md:translate-x-0',
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
         {/* Logo */}
-        <div className="flex h-16 items-center gap-2 border-b border-steel-800 px-4">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-forge-500">
+        <div className="flex h-16 items-center gap-2 border-b border-border px-4">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent">
             <Lightbulb className="h-4 w-4 text-white" />
           </div>
-          <span className="text-lg font-bold text-forge-400">IdeaForge</span>
+          <span className="text-lg font-bold text-accent-text">IdeaForge</span>
         </div>
 
         {/* Navigation */}
@@ -74,8 +74,8 @@ export function AppShell(): React.ReactElement {
                 className={cn(
                   'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                   isActive
-                    ? 'bg-forge-500/10 text-forge-400'
-                    : 'text-steel-400 hover:bg-steel-800 hover:text-steel-200'
+                    ? 'bg-accent-subtle text-accent-text'
+                    : 'text-foreground-secondary hover:bg-surface-hover hover:text-foreground'
                 )}
               >
                 <item.icon className="h-4 w-4" />
@@ -89,10 +89,10 @@ export function AppShell(): React.ReactElement {
       {/* Main content */}
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         {/* Header */}
-        <header className="flex h-16 items-center justify-between border-b border-steel-800 bg-steel-900/50 px-4">
+        <header className="flex h-16 items-center justify-between border-b border-border bg-surface/50 px-4">
           <button
             onClick={toggleSidebar}
-            className="rounded-lg p-2 text-steel-400 hover:bg-steel-800 hover:text-steel-200 md:hidden"
+            className="rounded-lg p-2 text-foreground-secondary hover:bg-surface-hover md:hidden"
             aria-label="Toggle sidebar"
             type="button"
           >
@@ -105,7 +105,7 @@ export function AppShell(): React.ReactElement {
 
           <div className="flex-1" />
 
-          <Button variant="forge" size="sm" onClick={() => { setSparkModalOpen(true); }}>
+          <Button variant="accent" size="sm" onClick={() => { setSparkModalOpen(true); }}>
             <Plus className="mr-1.5 h-4 w-4" />
             New Spark
           </Button>

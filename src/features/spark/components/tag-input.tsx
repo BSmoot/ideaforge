@@ -113,14 +113,14 @@ export function TagInput({
 
         {/* Suggestions dropdown */}
         {isOpen && suggestions.length > 0 && (
-          <div className="absolute top-full left-0 z-10 mt-1 w-full rounded-md border border-steel-700 bg-steel-800 py-1 shadow-lg">
+          <div className="absolute top-full left-0 z-10 mt-1 w-full rounded-md border border-border bg-surface py-1 shadow-lg">
             {suggestions
               .filter((s) => !selectedTags.some((t) => t.id === s.id))
               .map((tag) => (
                 <button
                   key={tag.id}
                   type="button"
-                  className="w-full px-3 py-1.5 text-left text-sm text-steel-200 hover:bg-steel-700"
+                  className="w-full px-3 py-1.5 text-left text-sm text-foreground hover:bg-surface-hover"
                   onClick={() => { addTag(tag); }}
                 >
                   {tag.name}

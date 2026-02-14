@@ -34,8 +34,8 @@ function ToolbarButton({
       className={cn(
         'rounded p-1.5 transition-colors',
         isActive
-          ? 'bg-forge-500/20 text-forge-400'
-          : 'text-steel-400 hover:bg-steel-700 hover:text-steel-200'
+          ? 'bg-accent-subtle text-accent-text'
+          : 'text-foreground-secondary hover:bg-surface-hover hover:text-foreground'
       )}
     >
       {children}
@@ -57,9 +57,9 @@ export function MarkdownEditor({
   }
 
   return (
-    <div className={cn('rounded-lg border border-steel-800 bg-steel-900', className)}>
+    <div className={cn('rounded-lg border border-border bg-surface', className)}>
       {/* Toolbar */}
-      <div className="flex flex-wrap items-center gap-0.5 border-b border-steel-800 px-2 py-1">
+      <div className="flex flex-wrap items-center gap-0.5 border-b border-border px-2 py-1">
         <ToolbarButton
           onClick={() => editor.chain().focus().toggleBold().run()}
           isActive={editor.isActive('bold')}
@@ -75,7 +75,7 @@ export function MarkdownEditor({
           <Italic className="h-4 w-4" />
         </ToolbarButton>
 
-        <div className="mx-1 h-4 w-px bg-steel-700" />
+        <div className="mx-1 h-4 w-px bg-border" />
 
         <ToolbarButton
           onClick={() =>
@@ -105,7 +105,7 @@ export function MarkdownEditor({
           <Heading3 className="h-4 w-4" />
         </ToolbarButton>
 
-        <div className="mx-1 h-4 w-px bg-steel-700" />
+        <div className="mx-1 h-4 w-px bg-border" />
 
         <ToolbarButton
           onClick={() => editor.chain().focus().toggleBulletList().run()}

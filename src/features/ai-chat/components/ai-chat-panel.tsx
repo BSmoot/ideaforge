@@ -30,13 +30,13 @@ export function AIChatPanel({
   return (
     <div className={cn('flex h-full flex-col', className)}>
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-steel-800 px-3 py-2">
+      <div className="flex items-center justify-between border-b border-border px-3 py-2">
         <div className="flex items-center gap-2">
-          <MessageSquare className="h-4 w-4 text-forge-400" />
-          <span className="text-sm font-medium text-steel-200">AI Chat</span>
+          <MessageSquare className="h-4 w-4 text-accent-text" />
+          <span className="text-sm font-medium text-foreground">AI Chat</span>
         </div>
         {totalCost > 0 && (
-          <span className="text-xs text-steel-500" title="Session cost">
+          <span className="text-xs text-foreground-tertiary" title="Session cost">
             {formatCost(totalCost)}
           </span>
         )}
@@ -45,7 +45,7 @@ export function AIChatPanel({
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-3 space-y-3">
         {messages.length === 0 && (
-          <div className="py-8 text-center text-sm text-steel-500">
+          <div className="py-8 text-center text-sm text-foreground-tertiary">
             <p>Ask questions about this idea.</p>
             <p className="mt-1 text-xs">
               The AI will use your idea as context.
@@ -59,8 +59,8 @@ export function AIChatPanel({
             className={cn(
               'rounded-lg px-3 py-2 text-sm',
               msg.role === 'user'
-                ? 'ml-8 bg-forge-500/10 text-steel-200'
-                : 'mr-8 bg-steel-800 text-steel-300'
+                ? 'ml-8 bg-accent-subtle text-foreground'
+                : 'mr-8 bg-background-muted text-foreground-secondary'
             )}
           >
             <p className="whitespace-pre-wrap">{msg.content}</p>
@@ -68,7 +68,7 @@ export function AIChatPanel({
         ))}
 
         {isStreaming && (
-          <div className="flex items-center gap-2 text-sm text-steel-400">
+          <div className="flex items-center gap-2 text-sm text-foreground-secondary">
             <Loader2 className="h-3 w-3 animate-spin" />
             Thinking...
           </div>

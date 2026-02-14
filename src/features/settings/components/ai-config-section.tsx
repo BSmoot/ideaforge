@@ -34,14 +34,14 @@ export function AIConfigSection(): React.ReactElement {
 
   return (
     <section className="space-y-4">
-      <h2 className="text-lg font-semibold text-steel-100">AI Configuration</h2>
+      <h2 className="text-lg font-semibold text-foreground">AI Configuration</h2>
 
       <div>
-        <label className="mb-1 block text-sm text-steel-300">Provider</label>
+        <label className="mb-1 block text-sm text-foreground-secondary">Provider</label>
         <select
           value={provider}
           onChange={(e) => { setProvider(e.target.value); }}
-          className="w-full rounded-md border border-steel-700 bg-steel-800 px-3 py-2 text-sm text-steel-200 focus:outline-none focus:ring-2 focus:ring-forge-500"
+          className="w-full rounded-md border border-border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-border-focus"
         >
           <option value="anthropic">Anthropic (Claude)</option>
           <option value="openai">OpenAI</option>
@@ -49,7 +49,7 @@ export function AIConfigSection(): React.ReactElement {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm text-steel-300">API Key</label>
+        <label className="mb-1 block text-sm text-foreground-secondary">API Key</label>
         <div className="relative">
           <Input
             type={showKey ? 'text' : 'password'}
@@ -60,18 +60,18 @@ export function AIConfigSection(): React.ReactElement {
           <button
             type="button"
             onClick={() => { setShowKey(!showKey); }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-steel-400 hover:text-steel-200"
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-foreground-secondary hover:text-foreground"
           >
             {showKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
           </button>
         </div>
-        <p className="mt-1 text-xs text-steel-500">
+        <p className="mt-1 text-xs text-foreground-tertiary">
           Stored in browser localStorage in plaintext. Your key never leaves your browser except to call the AI provider API directly.
         </p>
       </div>
 
       <div>
-        <label className="mb-1 block text-sm text-steel-300">Model</label>
+        <label className="mb-1 block text-sm text-foreground-secondary">Model</label>
         <Input
           value={model}
           onChange={(e) => { setModel(e.target.value); }}

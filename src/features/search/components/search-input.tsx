@@ -10,11 +10,11 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   function SearchInput({ className, onValueChange, onChange, ...props }, ref) {
     return (
       <div className={cn('relative', className)}>
-        <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-steel-500" />
+        <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-foreground-tertiary" />
         <input
           ref={ref}
           type="text"
-          className="w-full rounded-lg border border-steel-700 bg-steel-800 py-3 pl-11 pr-4 text-lg text-steel-100 placeholder:text-steel-500 focus:border-forge-500 focus:outline-none focus:ring-2 focus:ring-forge-500/20"
+          className="w-full rounded-lg border border-border-input bg-background py-3 pl-11 pr-4 text-lg text-foreground placeholder:text-foreground-tertiary focus:border-border-focus focus:outline-none focus:ring-2 focus:ring-border-focus/20"
           onChange={(e) => {
             onChange?.(e);
             onValueChange?.(e.target.value);

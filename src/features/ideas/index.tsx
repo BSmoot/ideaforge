@@ -47,12 +47,12 @@ export function IdeasDashboard(): React.ReactElement {
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-steel-100">Ideas</h1>
-          <p className="mt-1 text-sm text-steel-400">
+          <h1 className="text-2xl font-bold text-foreground">Ideas</h1>
+          <p className="mt-1 text-sm text-foreground-secondary">
             {filtered.length} {filtered.length === 1 ? 'idea' : 'ideas'}
           </p>
         </div>
-        <Button variant="forge" size="sm" onClick={() => { setSparkOpen(true); }}>
+        <Button variant="accent" size="sm" onClick={() => { setSparkOpen(true); }}>
           <Plus className="mr-1.5 h-4 w-4" />
           New Spark
         </Button>
@@ -66,8 +66,8 @@ export function IdeasDashboard(): React.ReactElement {
           className={cn(
             'rounded-full px-3 py-1 text-xs font-medium transition-colors',
             statusFilter === null
-              ? 'bg-forge-500/20 text-forge-400'
-              : 'text-steel-400 hover:bg-steel-800 hover:text-steel-200'
+              ? 'bg-accent-subtle text-accent-text'
+              : 'text-foreground-secondary hover:bg-surface-hover hover:text-foreground'
           )}
         >
           All
@@ -80,8 +80,8 @@ export function IdeasDashboard(): React.ReactElement {
             className={cn(
               'rounded-full px-3 py-1 text-xs font-medium transition-colors',
               status === statusFilter
-                ? 'bg-forge-500/20 text-forge-400'
-                : 'text-steel-400 hover:bg-steel-800 hover:text-steel-200'
+                ? 'bg-accent-subtle text-accent-text'
+                : 'text-foreground-secondary hover:bg-surface-hover hover:text-foreground'
             )}
           >
             {STATUS_LABELS[status]}
@@ -92,7 +92,7 @@ export function IdeasDashboard(): React.ReactElement {
           <select
             value={sortOrder}
             onChange={(e) => { setSortOrder(e.target.value as typeof sortOrder); }}
-            className="rounded-lg border border-steel-700 bg-steel-800 px-3 py-1 text-xs text-steel-300 focus:border-forge-500 focus:outline-none"
+            className="rounded-lg border border-border-input bg-background px-3 py-1 text-xs text-foreground-secondary focus:border-border-focus focus:outline-none"
           >
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
@@ -105,15 +105,15 @@ export function IdeasDashboard(): React.ReactElement {
       {/* Ideas grid */}
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center py-20 text-center">
-          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-steel-800">
-            <Lightbulb className="h-8 w-8 text-steel-500" />
+          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-background-muted">
+            <Lightbulb className="h-8 w-8 text-foreground-tertiary" />
           </div>
-          <h2 className="text-lg font-semibold text-steel-300">No ideas yet</h2>
-          <p className="mt-1 text-sm text-steel-500">
+          <h2 className="text-lg font-semibold text-foreground-secondary">No ideas yet</h2>
+          <p className="mt-1 text-sm text-foreground-tertiary">
             Capture your first spark to get started.
           </p>
           <Button
-            variant="forge"
+            variant="accent"
             size="sm"
             className="mt-4"
             onClick={() => { setSparkOpen(true); }}
@@ -141,10 +141,10 @@ function IdeaCard({ idea }: { idea: IIdea }): React.ReactElement {
   return (
     <Link
       to={`/ideas/${idea.id}`}
-      className="block rounded-lg border border-steel-800 bg-steel-900 p-4 transition-all hover:border-forge-500/50 hover:shadow-md"
+      className="block rounded-lg border border-border bg-surface p-4 transition-all hover:border-accent/50 hover:shadow-md"
     >
       <div className="mb-2 flex items-start justify-between gap-2">
-        <h3 className="line-clamp-1 font-semibold text-steel-100">
+        <h3 className="line-clamp-1 font-semibold text-foreground">
           {idea.title}
         </h3>
         <Badge variant={idea.status} size="sm">
@@ -152,9 +152,9 @@ function IdeaCard({ idea }: { idea: IIdea }): React.ReactElement {
         </Badge>
       </div>
       {preview && (
-        <p className="mb-3 line-clamp-2 text-sm text-steel-400">{preview}</p>
+        <p className="mb-3 line-clamp-2 text-sm text-foreground-secondary">{preview}</p>
       )}
-      <p className="text-xs text-steel-500">
+      <p className="text-xs text-foreground-tertiary">
         {formatRelativeTime(idea.updated_at)}
       </p>
     </Link>

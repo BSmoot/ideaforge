@@ -49,11 +49,11 @@ export function SearchView(): React.ReactElement {
       <div className="mt-6">
         {query.length === 0 ? (
           <div className="flex flex-col items-center py-16 text-center">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-steel-800">
-              <Search className="h-8 w-8 text-steel-500" />
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-background-muted">
+              <Search className="h-8 w-8 text-foreground-tertiary" />
             </div>
-            <p className="text-steel-400">Search your ideas</p>
-            <p className="mt-1 text-sm text-steel-500">
+            <p className="text-foreground-secondary">Search your ideas</p>
+            <p className="mt-1 text-sm text-foreground-tertiary">
               Find ideas by title, content, or tags
             </p>
           </div>

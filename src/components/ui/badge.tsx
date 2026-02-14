@@ -7,15 +7,15 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        spark: 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
-        developing: 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
-        refined: 'bg-green-500/20 text-green-400 border border-green-500/30',
-        parked: 'bg-steel-500/20 text-steel-400 border border-steel-500/30',
-        archived: 'bg-steel-600/20 text-steel-500 border border-steel-600/30',
-        success: 'bg-green-500/20 text-green-400 border border-green-500/30',
-        warning: 'bg-amber-500/20 text-amber-400 border border-amber-500/30',
-        destructive: 'bg-red-500/20 text-red-400 border border-red-500/30',
-        info: 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
+        spark: 'bg-status-warning-bg text-status-warning border border-status-warning/30',
+        developing: 'bg-status-info-bg text-status-info border border-status-info/30',
+        refined: 'bg-status-success-bg text-status-success border border-status-success/30',
+        parked: 'bg-background-muted text-foreground-tertiary border border-border',
+        archived: 'bg-background-muted text-foreground-disabled border border-border-subtle',
+        success: 'bg-status-success-bg text-status-success border border-status-success/30',
+        warning: 'bg-status-warning-bg text-status-warning border border-status-warning/30',
+        destructive: 'bg-status-error-bg text-status-error border border-status-error/30',
+        info: 'bg-status-info-bg text-status-info border border-status-info/30',
       },
       size: {
         sm: 'px-2 py-0.5 text-xs',

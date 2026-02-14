@@ -29,7 +29,7 @@ export function ChatInput({
   };
 
   return (
-    <div className="flex items-end gap-2 border-t border-steel-800 p-3">
+    <div className="flex items-end gap-2 border-t border-border p-3">
       <textarea
         ref={textareaRef}
         value={value}
@@ -38,7 +38,7 @@ export function ChatInput({
         placeholder={disabled ? 'AI is responding...' : 'Ask about this idea...'}
         disabled={disabled}
         rows={2}
-        className="flex-1 resize-none rounded-lg border border-steel-700 bg-steel-800 px-3 py-2 text-sm text-steel-200 placeholder:text-steel-500 focus:border-forge-500 focus:outline-none disabled:opacity-50"
+        className="flex-1 resize-none rounded-lg border border-border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-foreground-tertiary focus:border-border-focus focus:outline-none disabled:opacity-50"
       />
       <Button
         variant="primary"

@@ -48,15 +48,15 @@ export function DatabaseProvider({
 
   if (error) {
     return (
-      <div className="flex h-screen items-center justify-center bg-steel-950 text-red-400">
+      <div className="flex h-screen items-center justify-center bg-background text-status-error">
         <div className="text-center">
           <h1 className="text-2xl font-bold">Database Error</h1>
-          <p className="mt-2 text-steel-400">{error}</p>
+          <p className="mt-2 text-foreground-secondary">{error}</p>
           <button
             onClick={() => {
               window.location.reload();
             }}
-            className="mt-4 rounded-lg bg-forge-500 px-4 py-2 text-white hover:bg-forge-600"
+            className="mt-4 rounded-lg bg-accent px-4 py-2 text-white hover:bg-accent-hover"
             type="button"
           >
             Retry

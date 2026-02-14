@@ -1,49 +1,239 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-forge-50: #fef5ee;
-  --color-forge-100: #fde8d7;
-  --color-forge-200: #fbcdae;
-  --color-forge-300: #f8aa7a;
-  --color-forge-400: #f57c44;
-  --color-forge-500: #f2591f;
-  --color-forge-600: #e33f15;
-  --color-forge-700: #bc2e13;
-  --color-forge-800: #962818;
-  --color-forge-900: #7a2416;
-  --color-forge-950: #421009;
+  /* Background */
+  --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
+  --color-background-muted: var(--background-muted);
 
-  --color-steel-50: #f6f7f9;
-  --color-steel-100: #eceef2;
-  --color-steel-200: #d5dae2;
-  --color-steel-300: #b0bac9;
-  --color-steel-400: #8595ab;
-  --color-steel-500: #667892;
-  --color-steel-600: #516079;
-  --color-steel-700: #424e62;
-  --color-steel-800: #3a4253;
-  --color-steel-900: #343a47;
-  --color-steel-950: #23272f;
+  /* Surface */
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-selected: var(--surface-selected);
+  --color-surface-inverted: var(--surface-inverted);
 
-  --color-ember-50: #fef4ee;
-  --color-ember-100: #fde6d7;
-  --color-ember-200: #fac9ae;
-  --color-ember-300: #f7a47a;
-  --color-ember-400: #f37344;
-  --color-ember-500: #f0501f;
-  --color-ember-600: #e13615;
-  --color-ember-700: #ba2713;
-  --color-ember-800: #942218;
-  --color-ember-900: #781f16;
-  --color-ember-950: #410d09;
+  /* Foreground */
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-tertiary: var(--foreground-tertiary);
+  --color-foreground-disabled: var(--foreground-disabled);
+  --color-foreground-inverted: var(--foreground-inverted);
 
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+  /* Border */
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-input: var(--border-input);
+  --color-border-focus: var(--border-focus);
 
-  /* Using Tailwind's built-in spacing, radius, and shadow scales.
-     Custom --spacing-* variables were removed because they collide
-     with Tailwind v4's max-w-* / max-h-* utility resolution. */
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-pressed: var(--accent-pressed);
+  --color-accent-text: var(--accent-text);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-muted: var(--accent-muted);
+
+  /* Action (primary CTA) */
+  --color-action: var(--action);
+  --color-action-text: var(--action-text);
+  --color-action-hover: var(--action-hover);
+  --color-action-pressed: var(--action-pressed);
+
+  /* Status */
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-error: var(--status-error);
+  --color-status-info: var(--status-info);
+  --color-status-success-bg: var(--status-success-bg);
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-error-bg: var(--status-error-bg);
+  --color-status-info-bg: var(--status-info-bg);
+
+  /* Highlight (search marks, active states) */
+  --color-highlight-bg: var(--highlight-bg);
+  --color-highlight-text: var(--highlight-text);
+
+  /* Typography */
+  --font-family-sans: var(--font-body);
+  --font-family-mono: var(--font-mono);
+
+  /* Radii — Anvil: all 0px */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 0px;
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
 }
+
+/* ================================================================
+   SHARED TOKENS
+   ================================================================ */
+
+:root {
+  /* Accent scale — 252 deg indigo-violet */
+  --accent-50:  #F5F4FF;
+  --accent-100: #EDEDFF;
+  --accent-200: #D9D6FE;
+  --accent-300: #B8B2FC;
+  --accent-400: #8B83F0;
+  --accent-500: #5046E5;
+  --accent-600: #4338CA;
+  --accent-700: #3730A3;
+  --accent-800: #2E2880;
+  --accent-900: #1E1B4B;
+
+  /* Typography */
+  --font-body: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  /* Motion */
+  --ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-micro:  80ms;
+  --dur-fast:   120ms;
+  --dur-normal: 200ms;
+  --dur-slow:   300ms;
+
+  /* Radii */
+  --radius: 0px;
+
+  /* Borders */
+  --border-thin:   1px;
+  --border-medium: 2px;
+  --border-heavy:  3px;
+
+  /* Status */
+  --status-success: #059669;
+  --status-warning: #D97706;
+  --status-error:   #DC2626;
+  --status-info:    #2563EB;
+  --status-success-bg: #ECFDF5;
+  --status-warning-bg: #FFFBEB;
+  --status-error-bg:   #FEF2F2;
+  --status-info-bg:    #EFF6FF;
+}
+
+/* ================================================================
+   LIGHT MODE
+   ================================================================ */
+
+:root,
+[data-theme="light"] {
+  --background:        #FAFAFA;
+  --background-subtle: #F2F2F2;
+  --background-muted:  #E8E8E8;
+
+  --surface:           #FEFEFE;
+  --surface-hover:     #F4F4F4;
+  --surface-raised:    #FEFEFE;
+  --surface-selected:  #EDEDFF;
+  --surface-inverted:  #1A1A1A;
+
+  --foreground:          #1A1A1A;
+  --foreground-secondary:#727272;
+  --foreground-tertiary: #A0A0A0;
+  --foreground-disabled: #C8C8C8;
+  --foreground-inverted: #FAFAFA;
+
+  --border:        #E0E0E0;
+  --border-strong: #1A1A1A;
+  --border-subtle: #EFEFEF;
+  --border-input:  #CFCFCF;
+  --border-focus:  #1A1A1A;
+
+  --accent:          #5046E5;
+  --accent-hover:    #4338CA;
+  --accent-pressed:  #3730A3;
+  --accent-text:     #4338CA;
+  --accent-fg:       #FFFFFF;
+  --accent-subtle:   #EDEDFF;
+  --accent-muted:    #F5F4FF;
+
+  --action:          #1A1A1A;
+  --action-text:     #FAFAFA;
+  --action-hover:    #363636;
+  --action-pressed:  #111111;
+
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg:  0 4px 16px rgba(0,0,0,0.12);
+  --shadow-xl:  0 8px 24px rgba(0,0,0,0.16);
+
+  --highlight-bg: rgba(80, 70, 229, 0.15);
+  --highlight-text: #4338CA;
+}
+
+/* ================================================================
+   DARK MODE (default)
+   ================================================================ */
+
+[data-theme="dark"] {
+  --background:        #0B0B0B;
+  --background-subtle: #131313;
+  --background-muted:  #1C1C1C;
+
+  --surface:           #121212;
+  --surface-hover:     #191919;
+  --surface-raised:    #121212;
+  --surface-selected:  #1A1A30;
+  --surface-inverted:  #E6E6E6;
+
+  --foreground:          #E6E6E6;
+  --foreground-secondary:#838383;
+  --foreground-tertiary: #565656;
+  --foreground-disabled: #383838;
+  --foreground-inverted: #0B0B0B;
+
+  --border:        #262626;
+  --border-strong: #E6E6E6;
+  --border-subtle: #1C1C1C;
+  --border-input:  #363636;
+  --border-focus:  #E6E6E6;
+
+  --accent:          #7C6CFF;
+  --accent-hover:    #8B7FFF;
+  --accent-pressed:  #6B5FE8;
+  --accent-text:     #A8A0FF;
+  --accent-fg:       #FFFFFF;
+  --accent-subtle:   rgba(124,108,255,0.12);
+  --accent-muted:    rgba(124,108,255,0.06);
+
+  --action:          #E6E6E6;
+  --action-text:     #0B0B0B;
+  --action-hover:    #C4C4C4;
+  --action-pressed:  #F0F0F0;
+
+  --status-success: #6EE7B7;
+  --status-warning: #FCD34D;
+  --status-error:   #FCA5A5;
+  --status-info:    #93C5FD;
+  --status-success-bg: rgba(110,231,183,0.10);
+  --status-warning-bg: rgba(252,211,77,0.10);
+  --status-error-bg:   rgba(252,165,165,0.10);
+  --status-info-bg:    rgba(147,197,253,0.10);
+
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md:  0 2px 8px rgba(0,0,0,0.5);
+  --shadow-lg:  0 4px 16px rgba(0,0,0,0.6);
+  --shadow-xl:  0 8px 24px rgba(0,0,0,0.7);
+
+  --highlight-bg: rgba(124, 108, 255, 0.20);
+  --highlight-text: #A8A0FF;
+}
+
+/* ================================================================
+   BASE STYLES
+   ================================================================ */
 
 * {
   box-sizing: border-box;
@@ -53,9 +243,9 @@ html,
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #23272f;
-  color: #eceef2;
-  font-family: var(--font-family-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -66,5 +256,5 @@ body {
 
 code,
 pre {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-mono);
 }

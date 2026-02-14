@@ -71,7 +71,7 @@ export function IdeaCanvas(): React.ReactElement {
     return (
       <div className="flex flex-1 items-center justify-center p-8">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-steel-300">Idea not found</h1>
+          <h1 className="text-2xl font-bold text-foreground-secondary">Idea not found</h1>
           <Link to="/ideas" className="mt-4 inline-block">
             <Button variant="primary">Back to Ideas</Button>
           </Link>
@@ -85,11 +85,11 @@ export function IdeaCanvas(): React.ReactElement {
       {/* Main editor area */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Canvas header */}
-        <div className="flex items-center justify-between border-b border-steel-800 px-4 py-3">
+        <div className="flex items-center justify-between border-b border-border px-4 py-3">
           <div className="flex items-center gap-3">
             <Link
               to="/ideas"
-              className="rounded-lg p-1 text-steel-400 hover:bg-steel-800 hover:text-steel-200"
+              className="rounded-lg p-1 text-foreground-secondary hover:bg-surface-hover hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4" />
             </Link>
@@ -103,14 +103,14 @@ export function IdeaCanvas(): React.ReactElement {
               onClick={() => { setChatOpen((prev) => !prev); }}
               aria-label="Toggle AI chat"
             >
-              <MessageSquare className="h-4 w-4 text-forge-400" />
+              <MessageSquare className="h-4 w-4 text-accent-text" />
             </Button>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => { setDeleteOpen(true); }}
             >
-              <Trash2 className="h-4 w-4 text-steel-400" />
+              <Trash2 className="h-4 w-4 text-foreground-secondary" />
             </Button>
           </div>
         </div>
@@ -128,13 +128,13 @@ export function IdeaCanvas(): React.ReactElement {
 
       {/* AI Chat panel */}
       {chatOpen && (
-        <aside className="w-80 border-l border-steel-800 bg-steel-900/50">
+        <aside className="w-80 border-l border-border bg-surface/50">
           <AIChatPanel ideaId={idea.id} />
         </aside>
       )}
 
       {/* Metadata sidebar */}
-      <aside className="hidden w-72 border-l border-steel-800 bg-steel-900/50 p-4 lg:block">
+      <aside className="hidden w-72 border-l border-border bg-surface/50 p-4 lg:block">
         <MetadataPanel idea={idea} editorContent={editorContent} />
       </aside>
 

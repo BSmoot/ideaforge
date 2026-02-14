@@ -9,11 +9,11 @@ export const IDEA_STATUSES: readonly IdeaStatus[] = [
 ] as const;
 
 export const STATUS_COLORS: Record<IdeaStatus, string> = {
-  spark: 'bg-amber-500/20 text-amber-400',
-  developing: 'bg-blue-500/20 text-blue-400',
-  refined: 'bg-green-500/20 text-green-400',
-  parked: 'bg-steel-500/20 text-steel-400',
-  archived: 'bg-steel-600/20 text-steel-500',
+  spark: 'bg-status-warning-bg text-status-warning',
+  developing: 'bg-status-info-bg text-status-info',
+  refined: 'bg-status-success-bg text-status-success',
+  parked: 'bg-background-muted text-foreground-tertiary',
+  archived: 'bg-background-muted text-foreground-disabled',
 };
 
 export const MAX_TITLE_LENGTH = 200;

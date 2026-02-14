@@ -25,7 +25,7 @@ export function useMarkdownEditor(
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: 'text-forge-400 underline hover:text-forge-300',
+          class: 'text-accent-text underline hover:text-accent',
         },
       }),
       Markdown.configure({
@@ -38,7 +38,7 @@ export function useMarkdownEditor(
     editorProps: {
       attributes: {
         class:
-          'prose prose-invert prose-sm max-w-none focus:outline-none min-h-[200px] px-4 py-3 text-steel-200',
+          'prose prose-invert prose-sm max-w-none focus:outline-none min-h-[200px] px-4 py-3 text-foreground',
       },
     },
     onUpdate: ({ editor: e }) => {

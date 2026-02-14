@@ -3,13 +3,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const cardVariants = cva(
-  'rounded-lg border border-steel-800 bg-steel-900 text-steel-100',
+  'rounded-lg border border-border bg-surface text-foreground',
   {
     variants: {
       variant: {
         default: '',
         interactive:
-          'cursor-pointer transition-all hover:border-steel-600 hover:shadow-md active:scale-[0.99]',
+          'cursor-pointer transition-all hover:border-border-strong hover:shadow-md active:scale-[0.99]',
       },
     },
     defaultVariants: {

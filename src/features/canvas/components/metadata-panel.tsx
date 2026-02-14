@@ -50,31 +50,31 @@ export function MetadataPanel({
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-steel-500">
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
           Details
         </h3>
         <dl className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <dt className="text-steel-400">Created</dt>
-            <dd className="text-steel-200">{formatDate(idea.created_at)}</dd>
+            <dt className="text-foreground-secondary">Created</dt>
+            <dd className="text-foreground">{formatDate(idea.created_at)}</dd>
           </div>
           <div className="flex justify-between">
-            <dt className="text-steel-400">Updated</dt>
-            <dd className="text-steel-200">{formatDate(idea.updated_at)}</dd>
+            <dt className="text-foreground-secondary">Updated</dt>
+            <dd className="text-foreground">{formatDate(idea.updated_at)}</dd>
           </div>
           <div className="flex justify-between">
-            <dt className="text-steel-400">Words</dt>
-            <dd className="text-steel-200">{words}</dd>
+            <dt className="text-foreground-secondary">Words</dt>
+            <dd className="text-foreground">{words}</dd>
           </div>
           <div className="flex justify-between">
-            <dt className="text-steel-400">Characters</dt>
-            <dd className="text-steel-200">{chars}</dd>
+            <dt className="text-foreground-secondary">Characters</dt>
+            <dd className="text-foreground">{chars}</dd>
           </div>
         </dl>
       </div>
 
       <div>
-        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-steel-500">
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
           Tags
         </h3>
         <TagInput selectedTags={tags} onTagsChange={handleTagsChange} />

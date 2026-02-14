@@ -65,7 +65,7 @@ export function DataManagementSection(): React.ReactElement {
 
   return (
     <section className="space-y-4">
-      <h2 className="text-lg font-semibold text-steel-100">Data Management</h2>
+      <h2 className="text-lg font-semibold text-foreground">Data Management</h2>
 
       <div className="flex gap-3">
         <Button variant="secondary" onClick={handleExportJSON}>
@@ -78,9 +78,9 @@ export function DataManagementSection(): React.ReactElement {
         </Button>
       </div>
 
-      <div className="mt-6 rounded-lg border border-red-500/20 bg-red-500/5 p-4">
-        <h3 className="text-sm font-semibold text-red-400">Danger Zone</h3>
-        <p className="mt-1 text-sm text-steel-400">
+      <div className="mt-6 rounded-lg border border-status-error/20 bg-status-error-bg p-4">
+        <h3 className="text-sm font-semibold text-status-error">Danger Zone</h3>
+        <p className="mt-1 text-sm text-foreground-secondary">
           This will permanently delete all your ideas, settings, and backups.
         </p>
         <div className="mt-3 flex items-center gap-3">

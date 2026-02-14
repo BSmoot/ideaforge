@@ -61,7 +61,7 @@ export function SparkCaptureModal({
             <div>
               <label
                 htmlFor="spark-title"
-                className="mb-1 block text-sm font-medium text-steel-300"
+                className="mb-1 block text-sm font-medium text-foreground-secondary"
               >
                 Title <span className="text-red-400">*</span>
               </label>
@@ -82,7 +82,7 @@ export function SparkCaptureModal({
             <div>
               <label
                 htmlFor="spark-content"
-                className="mb-1 block text-sm font-medium text-steel-300"
+                className="mb-1 block text-sm font-medium text-foreground-secondary"
               >
                 Description
               </label>
@@ -96,7 +96,7 @@ export function SparkCaptureModal({
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-steel-300">
+              <label className="mb-1 block text-sm font-medium text-foreground-secondary">
                 Tags
               </label>
               <TagInput selectedTags={tags} onTagsChange={setTags} />
@@ -112,7 +112,7 @@ export function SparkCaptureModal({
             Cancel
           </Button>
           <Button
-            variant="forge"
+            variant="accent"
             onClick={() => { void handleSubmit(); }}
             disabled={isSubmitting}
           >

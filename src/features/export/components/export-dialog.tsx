@@ -61,7 +61,7 @@ export function ExportDialog({
     <Modal open={open} onOpenChange={onOpenChange} size="sm">
       <ModalHeader>
         <div className="flex items-center gap-2">
-          <Download className="h-5 w-5 text-forge-400" />
+          <Download className="h-5 w-5 text-accent-text" />
           <span>Export Ideas</span>
         </div>
       </ModalHeader>
@@ -71,12 +71,12 @@ export function ExportDialog({
             type="button"
             disabled={exporting}
             onClick={handleExportJson}
-            className="flex w-full items-center gap-3 rounded-lg border border-steel-700 bg-steel-800/50 p-4 text-left transition-colors hover:border-forge-500/50 hover:bg-steel-800 disabled:opacity-50"
+            className="flex w-full items-center gap-3 rounded-lg border border-border bg-surface-hover/50 p-4 text-left transition-colors hover:border-accent/50 hover:bg-surface-hover disabled:opacity-50"
           >
-            <FileJson className="h-8 w-8 text-forge-400" />
+            <FileJson className="h-8 w-8 text-accent-text" />
             <div>
-              <p className="font-medium text-steel-100">Export All as JSON</p>
-              <p className="text-xs text-steel-400">
+              <p className="font-medium text-foreground">Export All as JSON</p>
+              <p className="text-xs text-foreground-secondary">
                 All ideas, tags, and connections ({sizeEstimate})
               </p>
             </div>
@@ -87,14 +87,14 @@ export function ExportDialog({
               type="button"
               disabled={exporting}
               onClick={handleExportMarkdown}
-              className="flex w-full items-center gap-3 rounded-lg border border-steel-700 bg-steel-800/50 p-4 text-left transition-colors hover:border-forge-500/50 hover:bg-steel-800 disabled:opacity-50"
+              className="flex w-full items-center gap-3 rounded-lg border border-border bg-surface-hover/50 p-4 text-left transition-colors hover:border-accent/50 hover:bg-surface-hover disabled:opacity-50"
             >
-              <FileText className="h-8 w-8 text-forge-400" />
+              <FileText className="h-8 w-8 text-accent-text" />
               <div>
-                <p className="font-medium text-steel-100">
+                <p className="font-medium text-foreground">
                   Export Current Idea as Markdown
                 </p>
-                <p className="text-xs text-steel-400">
+                <p className="text-xs text-foreground-secondary">
                   {currentIdeaTitle ?? 'Current idea'} as .md file
                 </p>
               </div>

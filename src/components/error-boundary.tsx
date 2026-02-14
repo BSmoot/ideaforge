@@ -51,14 +51,14 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
       <div className="flex min-h-[400px] flex-col items-center justify-center p-8">
         <div className="max-w-md text-center">
           <div className="mb-4 text-4xl">&#9888;</div>
-          <h2 className="mb-2 text-xl font-bold text-steel-100">
+          <h2 className="mb-2 text-xl font-bold text-foreground">
             Something went wrong
           </h2>
-          <p className="mb-6 text-sm text-steel-400">
+          <p className="mb-6 text-sm text-foreground-secondary">
             An unexpected error occurred. You can try again or reload the page.
           </p>
           {this.state.error && (
-            <pre className="mb-6 max-h-32 overflow-auto rounded-lg bg-steel-800 p-3 text-left text-xs text-steel-400">
+            <pre className="mb-6 max-h-32 overflow-auto rounded-lg bg-background-muted p-3 text-left text-xs text-foreground-secondary">
               {this.state.error.message}
             </pre>
           )}

@@ -12,7 +12,7 @@ export function SaveIndicator({
 }: SaveIndicatorProps): React.ReactElement {
   if (status === 'saving') {
     return (
-      <span className="flex items-center gap-1 text-xs text-steel-400">
+      <span className="flex items-center gap-1 text-xs text-foreground-secondary">
         <Loader2 className="h-3 w-3 animate-spin" />
         Saving...
       </span>
@@ -21,7 +21,7 @@ export function SaveIndicator({
 
   if (status === 'error') {
     return (
-      <span className="flex items-center gap-1 text-xs text-red-400">
+      <span className="flex items-center gap-1 text-xs text-status-error">
         <AlertCircle className="h-3 w-3" />
         Save failed
       </span>
@@ -30,12 +30,12 @@ export function SaveIndicator({
 
   if (status === 'saved' && lastSaved) {
     return (
-      <span className="flex items-center gap-1 text-xs text-green-400">
+      <span className="flex items-center gap-1 text-xs text-status-success">
         <Check className="h-3 w-3" />
         Saved {formatRelativeTime(lastSaved)}
       </span>
     );
   }
 
-  return <span className="text-xs text-steel-500">Ready</span>;
+  return <span className="text-xs text-foreground-tertiary">Ready</span>;
 }

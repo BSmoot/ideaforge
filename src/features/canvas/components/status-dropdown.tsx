@@ -42,7 +42,7 @@ export function StatusDropdown({
       <select
         value={currentStatus}
         onChange={handleChange}
-        className="rounded border border-steel-700 bg-steel-800 px-2 py-1 text-xs text-steel-300 focus:outline-none focus:ring-1 focus:ring-forge-500"
+        className="rounded border border-border-input bg-background px-2 py-1 text-xs text-foreground-secondary focus:outline-none focus:ring-1 focus:ring-border-focus"
         aria-label="Change status"
       >
         {IDEA_STATUSES.map((s) => (

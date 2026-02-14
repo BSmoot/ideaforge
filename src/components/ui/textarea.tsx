@@ -3,12 +3,12 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const textareaVariants = cva(
-  'flex min-h-[80px] w-full rounded-md border bg-steel-800 px-3 py-2 text-sm text-steel-100 placeholder:text-steel-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forge-500 focus-visible:ring-offset-2 focus-visible:ring-offset-steel-950 disabled:cursor-not-allowed disabled:opacity-50',
+  'flex min-h-[80px] w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-foreground-tertiary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       state: {
-        default: 'border-steel-700',
-        error: 'border-red-500 focus-visible:ring-red-500',
+        default: 'border-border-input',
+        error: 'border-status-error focus-visible:ring-status-error',
       },
     },
     defaultVariants: {
